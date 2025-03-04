@@ -1,16 +1,218 @@
-## Hi there 👋
+<html>
+<head>
+    <title>Online Shopping Application</title>
+    <link rel="stylesheet" href="shopping2.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        main {
+            flex: 1;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .product-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            width: 300px;
+            text-align: center;
+            position: relative;
+        }
+        .rating {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .rating span {
+            font-size: 20px;
+            color: gold;
+        }
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .add-to-cart, .buy-now {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .buy-options {
+            display: none;
+            margin: 10px 0;
+        }
+        .buy-options a {
+            display: block;
+            margin: 5px 0;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .whitelist-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .whitelist-icon.active {
+            color: red;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+        }
+        .product-link {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <center>
+        <h1>Online Shopping</h1>
+    </center>
+    </header>
+    <nav>
+        <a href="#">Home</a><br>
+        <a href="#">Products</a><br>
+        <a href="#">About</a><br>
+        <a href="#">Contact</a><br>
+        <a href="#" id="view-wishlist">View Wishlist</a>
+    </nav>
+    <main class="container">
+        <div class="main">
+            <div class="product-card" data-id="1">
+                <span class="whitelist-icon" onclick="toggleWhitelist(this)">☆</span>
+                <img src="iPhone.webp" alt="iphone 15">
+                <p class="price">$19.99</p>
+                <p class="product-link" onclick="showDetails(this)">View Details</p>
+                <div class="product-details" style="display:none;">
+                    <p>Apple iPhone 15 Pro (128 GB Storage, Black Titanium)</p>
+                    <div class="rating">
+                        <span>★★★★☆</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" data-id="1">
+                <span class="whitelist-icon" onclick="toggleWhitelist(this)">☆</span>
+                <img src="iPhone.webp" alt="iphone 15">
+                <p class="price">$19.99</p>
+                <p class="product-link" onclick="showDetails(this)">View Details</p>
+                <div class="product-details" style="display:none;">
+                    <p>Apple iPhone 15 Pro (128 GB Storage, Black Titanium)</p>
+                    <div class="rating">
+                        <span>★★★★☆</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" data-id="1">
+                <span class="whitelist-icon" onclick="toggleWhitelist(this)">☆</span>
+                <img src="iPhone.webp" alt="iphone 15">
+                <p class="price">$19.99</p>
+                <p class="product-link" onclick="showDetails(this)">View Details</p>
+                <div class="product-details" style="display:none;">
+                    <p>Apple iPhone 15 Pro (128 GB Storage, Black Titanium)</p>
+                    <div class="rating">
+                        <span>★★★★☆</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" data-id="1">
+                <span class="whitelist-icon" onclick="toggleWhitelist(this)">☆</span>
+                <img src="iPhone.webp" alt="iphone 15">
+                <p class="price">$19.99</p>
+                <p class="product-link" onclick="showDetails(this)">View Details</p>
+                <div class="product-details" style="display:none;">
+                    <p>Apple iPhone 15 Pro (128 GB Storage, Black Titanium)</p>
+                    <div class="rating">
+                        <span>★★★★☆</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" data-id="1">
+                <span class="whitelist-icon" onclick="toggleWhitelist(this)">☆</span>
+                <img src="iPhone.webp" alt="iphone 15">
+                <p class="price">$19.99</p>
+                <p class="product-link" onclick="showDetails(this)">View Details</p>
+                <div class="product-details" style="display:none;">
+                    <p>Apple iPhone 15 Pro (128 GB Storage, Black Titanium)</p>
+                    <div class="rating">
+                        <span>★★★★☆</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" data-id="1">
+                <span class="whitelist-icon" onclick="toggleWhitelist(this)">☆</span>
+                <img src="iPhone.webp" alt="iphone 15">
+                <p class="price">$19.99</p>
+                <p class="product-link" onclick="showDetails(this)">View Details</p>
+                <div class="product-details" style="display:none;">
+                    <p>Apple iPhone 15 Pro (128 GB Storage, Black Titanium)</p>
+                    <div class="rating">
+                        <span>★★★★☆</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function toggleWhitelist(icon) {
+            icon.classList.toggle('active');
+            const productId = icon.closest('.product-card').dataset.id;
+            const productTitle = icon.closest('.product-card').querySelector('p.product-link').innerText;
+            
+            if (icon.classList.contains('active')) {
+                addToWhitelist(productId, productTitle);
+            } else {
+                removeFromWhitelist(productId);
+            }
+        }
 
-<!--
-**Naina-Thakur/Naina-Thakur** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+        function addToWhitelist(productId, productTitle) {
+            let whitelist = JSON.parse(localStorage.getItem('whitelist')) || [];
+            whitelist.push({ id: productId, title: productTitle });
+            localStorage.setItem('whitelist', JSON.stringify(whitelist));
+        }
 
-Here are some ideas to get you started:
+        function removeFromWhitelist(productId) {
+            let whitelist = JSON.parse(localStorage.getItem('whitelist')) || [];
+            whitelist = whitelist.filter(item => item.id !== productId);
+            localStorage.setItem('whitelist', JSON.stringify(whitelist));
+        }
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+        function showDetails(link) {
+            const productCard = link.closest('.product-card');
+            const details = productCard.querySelector('.product-details');
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        document.getElementById('view-whitelist').addEventListener('click', function(event) {
+            event.preventDefault();
+            let whitelist = JSON.parse(localStorage.getItem('whitelist')) || [];
+            if (whitelist.length === 0) {
+                alert('Your whitelist is empty.');
+            } else {
+                alert('Whitelisted Products:\n' + whitelist.map(item => item.title).join('\n'));
+            }
+        });
+    </script>
+</body>
+</html>
